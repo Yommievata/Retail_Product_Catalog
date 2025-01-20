@@ -20,18 +20,42 @@ public class ProductService {
         this.fuzzySearchService = fuzzySearchService;
     }
 
+    /**
+     * Adds a new product to the catalog.
+     *
+     * @param product the product to add.
+     * @return the added product.
+     */
     public Product addProduct(Product product){
         return productRepository.saveProduct(product);
     }
 
+    /**
+     * Retrieves a product from the catalog by its ID.
+     *
+     * @param id the ID of the product to retrieve
+     * @return an Optional containing the product if found, otherwise an empty Optional
+     */
     public Optional<Product> getProduct(Long id){
         return productRepository.findById(id);
     }
 
+    /**
+     * Retrieves all products from the catalog.
+     *
+     * @return a list of all products in the catalog
+     */
     public List<Product> getAllProducts() {
         return productRepository.findAll();
     }
 
+    /**
+     * Searches for products based on a query string. The search is case-insensitive and uses fuzzy matching
+     * to find similar product names.
+     *
+     * @param query the query string to search for
+     * @return a list of products whose names are similar to the query
+     */
     public List<Product> searchProducts(String query) {
         if (query == null || query.trim().isEmpty()) {
             return getAllProducts();
