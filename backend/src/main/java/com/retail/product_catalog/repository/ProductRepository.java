@@ -15,6 +15,7 @@ public class ProductRepository {
     private long currentId = 1;
 
     public ProductRepository() {
+        //mock products
         initializeMockData();
     }
 
