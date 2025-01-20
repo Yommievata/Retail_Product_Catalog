@@ -1,4 +1,4 @@
-package com.retail.product_catalog.exceptions;
+package com.retail.product_catalog.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

@@ -1,7 +1,7 @@
 package com.retail.product_catalog.service;
 
-import com.retail.product_catalog.exceptions.InvalidSearchParameterException;
-import com.retail.product_catalog.exceptions.ProductNotFoundException;
+import com.retail.product_catalog.exception.InvalidSearchParameterException;
+import com.retail.product_catalog.exception.ProductNotFoundException;
 import com.retail.product_catalog.model.Product;
 import com.retail.product_catalog.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;

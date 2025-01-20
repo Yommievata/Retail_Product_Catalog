@@ -25,7 +25,7 @@ public class ProductRepository {
         iphone.setCategory("Electronics");
         iphone.setDescription("Latest iPhone model with advanced features");
         iphone.setPrice(999.99);
-        iphone.setImageUrl("iphone13.jpg");
+        iphone.setImageUrl("http://localhost:8080/images/iphone13.jpg"); //imageUrl to be displayed in the frontend
         saveProduct(iphone);
 
         Product tv = new Product();
@@ -33,7 +33,7 @@ public class ProductRepository {
         tv.setCategory("Electronics");
         tv.setDescription("4K Smart TV with HDR");
         tv.setPrice(799.99);
-        tv.setImageUrl("samsung-tv.jpg");
+        tv.setImageUrl("http://localhost:8080/images/samsung-tv.jpg");
         saveProduct(tv);
 
         Product coffee = new Product();
@@ -41,7 +41,7 @@ public class ProductRepository {
         coffee.setCategory("Appliances");
         coffee.setDescription("Programmable coffee maker with timer");
         coffee.setPrice(49.99);
-        coffee.setImageUrl("coffee-maker.jpg");
+        coffee.setImageUrl("http://localhost:8080/images/coffee-maker.jpg");
         saveProduct(coffee);
     }
 

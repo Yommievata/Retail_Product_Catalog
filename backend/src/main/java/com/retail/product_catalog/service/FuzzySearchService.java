@@ -12,7 +12,8 @@ public class FuzzySearchService {
      * 3. Checking if they share enough characters in sequence
      */
     public boolean isSimilar(String source, String target) {
-        if (source == null || target == null) {
+        if (source == null || target == null ||
+                source.trim().isEmpty() || target.trim().isEmpty()) {
             return false;
         }
 
