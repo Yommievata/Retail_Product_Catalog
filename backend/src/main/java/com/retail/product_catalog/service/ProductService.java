@@ -1,5 +1,7 @@
 package com.retail.product_catalog.service;
 
+import com.retail.product_catalog.exceptions.InvalidSearchParameterException;
+import com.retail.product_catalog.exceptions.ProductNotFoundException;
 import com.retail.product_catalog.model.Product;
 import com.retail.product_catalog.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +39,8 @@ public class ProductService {
      * @return an Optional containing the product if found, otherwise an empty Optional
      */
     public Optional<Product> getProduct(Long id){
-        return productRepository.findById(id);
+        return Optional.ofNullable(productRepository.findById(id)
+                .orElseThrow(() -> new ProductNotFoundException(id)));
     }
 
     /**
@@ -58,7 +61,7 @@ public class ProductService {
      */
     public List<Product> searchProducts(String query) {
         if (query == null || query.trim().isEmpty()) {
-            return getAllProducts();
+            throw new InvalidSearchParameterException("Search query cannot be empty");
         }
 
         return productRepository.findAll().stream()
