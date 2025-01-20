@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { SearchPage } from './pages/SearchPage';
-import { ProductDetail } from './pages/ProductDetail';
+import { SearchPage } from './views/SearchPage';
+import { ProductDetail } from './views/ProductDetail';
 import './App.css';
 
 function App() {
